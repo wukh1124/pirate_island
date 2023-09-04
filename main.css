@@ -1,0 +1,314 @@
+:root{
+    --card-width-lg:150px;
+    --card-height-lg:210px;
+
+    --card-width-sm:102px;
+    --card-height-sm:140px;
+	
+	--card-name-lg:35px;
+	--card-name-sm:25px;
+
+    --num-cards:5;
+
+    --card-horizontal-space-lg: 100px;
+    --card-horizontal-space-sm: 50px;
+
+    --badge-bg-color:darkgrey;
+    --primary-color: black;
+    --secondary-color: #ffffff;
+
+    --primary-font: 'Quicksand', sans-serif;
+	
+	
+	--image-url-renew: 	url('images/5CU6Rp.png');
+	--image-url-clear: 	url('images/YUM3pz.png');
+	--image-url-view: 	url('images/nC2GgR.png');
+	--image-url-unview:	url('images/PW780B.png');
+
+}
+body{
+	
+}
+
+.background{
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	background-image: url('images/map_bg.jpg');
+	background-size: cover;
+	opacity: 0.2;
+}
+
+/* Main container*/
+.container{
+	display:flex;
+	flex-direction: column;
+	padding: 5px;
+}
+
+/* Card title */
+.card-title-container{
+	display:flex;
+	flex-direction: row;
+}
+
+.card-title, .card-title-1{
+	text-align: center;
+    position: relative;
+	width: var(--card-width-lg);
+}
+
+
+
+/* Card content */
+.card-pos-1, .card-pos-2,.card-pos-3,.card-pos-4,.card-pos-5{
+    display:flex;
+    position: relative;
+    height: calc(var(--card-name-lg) + var(--card-height-lg));
+    width: var(--card-width-lg);
+}
+
+.card-container{
+	display:flex;
+	flex-direction: row;
+}
+
+.card{
+    position:absolute;
+    height:var(--card-height-lg);
+    width:var(--card-width-lg);
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out
+}
+
+.card-inner{
+    position: relative;
+    width:100%;
+    height:100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card-front, .card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.card-img{
+    height:100%;
+}
+.card-back{
+    transform: rotateY(180deg);
+}
+.card-inner.flip-it{
+    transform: rotateY(180deg);
+}
+.card-name{
+	position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: var(--card-width-lg);
+    font-weight: bold;
+}
+
+
+/* Dropdown Button */
+.dropdown-container{
+	display: flex;
+	margin-top: 5px;
+	flex-direction: row;
+}
+
+.dropbtn {
+	/*background-color: #3498DB;*/
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	background: var(--image-url-renew);
+	background-size: auto 100%;
+	height: 50px;
+    width: 50px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+#dropdown-1,#dropdown-2,#dropdown-3,#dropdown-4,#dropdown-5 {
+	position: static;
+	display: inline-block;
+	text-align: center;
+	width: var(--card-width-lg);
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	line-height: 20px;
+	padding: 12px;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #ddd;
+	line-height: 20px;
+	padding: 12px;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display:flex;
+}
+
+
+
+/* Clear Button */
+.clear-container{
+	display:flex;
+	flex-direction: row;
+}
+
+.clearbtn {
+	/*background-color: #3498DB;*/
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	background: var(--image-url-clear);
+	background-size: auto 100%;
+	height: 50px;
+    width: 50px;
+	/*position: absolute;*/
+}
+
+#clear-1,#clear-2,#clear-3,#clear-4,#clear-5 {
+	/*position: relative;
+	display: inline-block;*/
+	text-align: center;
+	width: var(--card-width-lg);
+}
+
+
+/* View Button */
+.viewbtn {
+	/*background-color: #3498DB;*/
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	background: var(--image-url-view);
+	background-size: auto 100%;
+	height: 50px;
+    width: 80px;
+}
+.unviewbtn {
+	/*background-color: #3498DB;*/
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	background: var(--image-url-unview);
+	background-size: auto 100%;
+	height: 50px;
+    width: 80px;
+}
+.view-container{
+	display:flex;
+}
+.history-container{
+	padding: 5px;
+}
+
+/* History */
+.history{
+	/*margin-bottom: 200px;*/
+}
+
+@media (max-width: 500px) {
+	.container{
+		flex-direction: row;
+	}
+	.card-title-container{
+		flex-direction: column;
+	}
+	.card-title, .card-title-1{
+		width: 10px;
+		height: calc(var(--card-name-sm) + var(--card-height-sm));
+		line-height: calc(var(--card-name-sm) + var(--card-height-sm));
+		border-style: none none solid solid;
+	}
+	.card-title-1{
+		border-style: solid none solid solid;
+	}
+	.card-pos-1, .card-pos-2,.card-pos-3,.card-pos-4,.card-pos-5{
+		height: calc(var(--card-name-sm) + var(--card-height-sm));
+		width: var(--card-width-sm);
+		border-style: none none solid none;
+	}
+	.card-pos-1{
+		border-style: solid none solid none;
+	}
+	.card-container{
+		flex-direction: column;
+	}
+	.card{
+		height:var(--card-height-sm);
+		width:var(--card-width-sm);
+	}
+	.card-name{
+		width: var(--card-width-sm);
+	}
+	.dropdown-container{
+		flex-direction: column;
+		margin-top: 0px;
+	}
+	#dropdown-1,#dropdown-2,#dropdown-3,#dropdown-4,#dropdown-5{
+		width: 80px;
+		height: calc(var(--card-name-sm) + var(--card-height-sm));
+		line-height: calc(var(--card-name-sm) + var(--card-height-sm));
+		border-style: none none solid none;
+	}
+	#dropdown-1{
+		border-style: solid none solid none;
+	}
+	.clear-container{
+		flex-direction: column;
+	}
+	.clearbtn{
+		position: initial;
+	}
+	#clear-1,#clear-2,#clear-3,#clear-4,#clear-5{
+		width: 50px;
+		height: calc(var(--card-name-sm) + var(--card-height-sm));
+		border-style: none solid solid none;
+	}
+	#clear-1{
+		border-style: solid solid solid none;
+	}
+	.view-container{
+		margin-left: 20px;
+	}
+}
