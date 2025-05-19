@@ -13,3 +13,6 @@
 
 You can review the card history inside details[]
 In addition, the consequences of that card will be listed inside the () behind
+
+## Demo
+https://wukh1124.github.io/pirate_island/
