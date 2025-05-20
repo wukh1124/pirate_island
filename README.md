@@ -1,4 +1,4 @@
-# Pirate Island Card Counter
+# Tortuga Card Tacker
 
 ## Usage
 
